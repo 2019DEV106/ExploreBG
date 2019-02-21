@@ -1,7 +1,7 @@
 package com.bnppfortis.bowling;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,31 +19,24 @@ public class BowlingGameTest {
 
 	@Test
 	public void scoreGutterGame() {
-		roll(20, 0);
+		bowlingGame.roll(0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		assertThat(bowlingGame.score(), is(0));
 
 	}
 
 	@Test
 	public void scoreGameOfOnes() {
-		roll(20, 1);
+		bowlingGame.roll(1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1);
 		assertThat(bowlingGame.score(), is(20));
 
 	}
 	
 	@Test
 	public void scoreSpareFollowedByThree() {
-		bowlingGame.roll(5);
-		bowlingGame.roll(5);
-		bowlingGame.roll(3);
-		roll(17, 0);
+		bowlingGame.roll(5,5, 3,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		assertThat(bowlingGame.score(), is(16));
 	}
 
-	public void roll(int times, int pinsDown) {
-		for (int i = 0; i < times; i++) {
-			bowlingGame.roll(pinsDown);
-		}
-	}
+	
 
 }
