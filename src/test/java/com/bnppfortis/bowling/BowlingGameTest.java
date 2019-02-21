@@ -43,7 +43,7 @@ public class BowlingGameTest {
 		assertThat(bowlingGame.score(), is(22));
 	}
 	@Test
-	public void scorePerfectGame() throws Exception {
+	public void scorePerfectGame() {
 		bowlingGame.roll(10, 10, 10 ,10, 10, 10, 10, 10, 10, 10, 10, 10);
 		assertThat(bowlingGame.score(), is(300));
 	}
