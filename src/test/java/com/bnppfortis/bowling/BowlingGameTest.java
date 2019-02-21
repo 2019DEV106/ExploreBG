@@ -37,6 +37,10 @@ public class BowlingGameTest {
 		assertThat(bowlingGame.score(), is(16));
 	}
 
-	
+	@Test
+	public void scoreStrikeFollowedByThreeThenThree() {
+		bowlingGame.roll(10, 3,3, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+		assertThat(bowlingGame.score(), is(22));
+	}
 
 }
